@@ -2,24 +2,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>飲み会</Text>
-//       <Text>ゲーム</Text>
-//       <Bbb />
-//     </View>
-//   );
-// }
-
-// const Bbb = () => {
-//   return (
-//     <View>
-//       <Text>ver 1.00</Text>
-//       <Text>ルーレット</Text>
-//     </View>
-//   );
-// };
 
 export default class App extends React.Component {
   // //コンストラクタ
