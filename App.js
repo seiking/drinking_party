@@ -2,6 +2,7 @@ import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 
 import HomeScreen from "./src/screens/HomeScreen";
+import GameMenuScreen from "./src/screens/GameMenuScreen";
 import BombScreen from "./src/screens/BombScreen";
 import BombScreen2 from "./src/screens/BombScreen2";
 
