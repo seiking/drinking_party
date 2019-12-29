@@ -5,13 +5,17 @@ import HomeScreen from "./src/screens/HomeScreen";
 import GameMenuScreen from "./src/screens/GameMenuScreen";
 import BombScreen from "./src/screens/BombScreen";
 import BombScreen2 from "./src/screens/BombScreen2";
+import RouletteScreen from "./src/screens/RouletteScreen";
+import MenberListsScreen from "./src/screens/MenberListsScreen";
 
 const AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
     GameMenu: GameMenuScreen,
     Bomb: BombScreen,
-    Bomb2: BombScreen2
+    Bomb2: BombScreen2,
+    Roulette: RouletteScreen,
+    MenberLists: MenberListsScreen
   },
   {
     initialRouteName: "Home"

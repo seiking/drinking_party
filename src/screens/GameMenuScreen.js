@@ -8,9 +8,9 @@ export default class GameMenuScreen extends React.Component {
       AdMobInterstitial.setAdUnitID('ca-app-pub-3940256099942544/1033173712') // テスト広告
     } else {
       if (Platform.OS === 'ios') {
-        AdMobInterstitial.setAdUnitID('広告ユニットID') //iOS
+        AdMobInterstitial.setAdUnitID('ca-app-pub-5794775692843907/1557200428') //iOS
       } else {
-        AdMobInterstitial.setAdUnitID('広告ユニットID') //android
+        AdMobInterstitial.setAdUnitID('ca-app-pub-5794775692843907/8833055213') //android
       }
     }
     await AdMobInterstitial.requestAdAsync()
@@ -26,7 +26,7 @@ export default class GameMenuScreen extends React.Component {
         <View style={styles.game_lists}>
           <TouchableHighlight
             style={styles.button}
-            onPress={this.aaa}
+            onPress={() => this.props.navigation.navigate('Roulette')}
             underlayColor={'#FFECE0'}
             activeOpacity={0.7}
             underlayColor={'#FDF9F7'}
