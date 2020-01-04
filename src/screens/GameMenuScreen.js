@@ -29,6 +29,7 @@ export default class GameMenuScreen extends React.Component {
             style={styles.button}
             onPress={() => this.props.navigation.navigate('MenberLists', {
               title: 'ルーレット',
+              navigationParameter: 'Roulette'
             })}
             underlayColor={'#FFECE0'}
             activeOpacity={0.7}
@@ -52,6 +53,7 @@ export default class GameMenuScreen extends React.Component {
             style={styles.button}
             onPress={() => this.props.navigation.navigate('MenberLists', {
               title: '王様ゲーム',
+              navigationParameter: 'KingGame'
             })}
             underlayColor={'#FDF9F7'}
           >
@@ -74,7 +76,10 @@ export default class GameMenuScreen extends React.Component {
 
           <TouchableHighlight
             style={styles.button}
-            onPress={this.Interstitial}
+            onPress={() => this.props.navigation.navigate('MenberLists', {
+              title: '不平等割り勘',
+              navigationParameter: 'HubyoudouWarikan'
+            })}
             underlayColor={'#FDF9F7'}
           >
           <View style= {{alignItems: 'center'}}>
