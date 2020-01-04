@@ -23,16 +23,20 @@ export default class GameMenuScreen extends React.Component {
     return (
       <View style={styles.container}>
       <View>
+
         <View style={styles.game_lists}>
           <TouchableHighlight
             style={styles.button}
-            onPress={() => this.props.navigation.navigate('Roulette')}
+            onPress={() => this.props.navigation.navigate('MenberLists', {
+              title: 'ルーレット',
+            })}
             underlayColor={'#FFECE0'}
             activeOpacity={0.7}
             underlayColor={'#FDF9F7'}
           >
             <Text style={styles.bottom_button_text}>ルーレット</Text>
           </TouchableHighlight>
+
           <TouchableHighlight
             style={styles.button}
             onPress={() => this.props.navigation.navigate('Bomb')}
@@ -43,9 +47,12 @@ export default class GameMenuScreen extends React.Component {
             <Text style={styles.bottom_button_text}>ゲーム</Text>
           </View>
           </TouchableHighlight>
+
           <TouchableHighlight
             style={styles.button}
-            onPress={this.aaa}
+            onPress={() => this.props.navigation.navigate('MenberLists', {
+              title: '王様ゲーム',
+            })}
             underlayColor={'#FDF9F7'}
           >
           <View style= {{alignItems: 'center'}}>
@@ -53,6 +60,7 @@ export default class GameMenuScreen extends React.Component {
             <Text style={styles.bottom_button_text}>ゲーム</Text>
           </View>
           </TouchableHighlight>
+
           <TouchableHighlight
             style={styles.button}
             onPress={this.Interstitial}
@@ -63,6 +71,7 @@ export default class GameMenuScreen extends React.Component {
             <Text style={styles.bottom_button_text}>ゲーム</Text>
           </View>
           </TouchableHighlight>
+
           <TouchableHighlight
             style={styles.button}
             onPress={this.Interstitial}
