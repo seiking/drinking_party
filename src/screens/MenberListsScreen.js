@@ -8,7 +8,7 @@ export default class RouletteScreen extends React.Component {
     super(props);
     this.state = {
       current_names: {},
-      listSize: 3
+      listSize: 1
     };
   }
 
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: "#DB9B88",
     fontWeight: "bold",
-    marginBottom: 5
+    marginBottom: 10
   },
   bottom_button: {
     marginTop: '5%',

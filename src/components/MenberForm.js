@@ -3,17 +3,30 @@ import { StyleSheet, View, TextInput, ScrollView} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
 const MenberListFrom = props => {
+  let {listSize} = props
   const menberLists = []
-  // const [menberLists, setMenberLists] = React.useState([])
-  for (let i = 0; i< props.listSize; i++) {
+
+  const [isDelete, setIsDelete] = useState(false)
+
+  const deleteMenber = num => {
+    setIsDelete(true)
+    props.deleteMenber(num)
+  }
+  if (listSize === 0 && isDelete === false) {
+    listSize = 1
+  }
+
+  for (let i = 0; i< listSize; i++) {
     menberLists.push(
       <View key={i} style={{ flexDirection: 'row', alignItems: 'center'}}>
-      <FontAwesome name="minus-circle" size={30} color="#E50F0F" onPress={() => props.deleteMenber(i)}/>
+      <FontAwesome name="minus-circle" size={30} color="#E50F0F" onPress={() => deleteMenber(i)}/>
         <TextInput
           style={styles.TextInput}
           onChangeText={text => props.handleChangeText(text, i)}
           onBlur={()=>props.storeData(props.names)}
           value={props.names[i]}
+          placeholder='名前を入力'
+          placeholderTextColor='#7E7E7E'
         />
       </View>
     )
