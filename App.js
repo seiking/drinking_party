@@ -6,9 +6,10 @@ import GameMenuScreen from "./src/screens/GameMenuScreen";
 import BombScreen from "./src/screens/BombScreen";
 import BombScreen2 from "./src/screens/BombScreen2";
 import MenberListsScreen from "./src/screens/MenberListsScreen";
-import RouletteScreen from './src/screens/RouletteScreen'
-import KingGameScreen from './src/screens/KingGameScreen'
-import HubyoudouWarikanScreen from './src/screens/HubyoudouWarikan'
+import RouletteScreen from "./src/screens/RouletteScreen";
+import KingGameScreen from "./src/screens/KingGameScreen";
+import HubyoudouWarikanScreen from "./src/screens/HubyoudouWarikan";
+import Cocontouzai from "./src/screens/Cocontouzai";
 
 const AppNavigator = createStackNavigator(
   {
@@ -19,7 +20,8 @@ const AppNavigator = createStackNavigator(
     MenberLists: MenberListsScreen,
     Roulette: RouletteScreen,
     KingGame: KingGameScreen,
-    HubyoudouWarikan: HubyoudouWarikanScreen
+    HubyoudouWarikan: HubyoudouWarikanScreen,
+    Touzai: Cocontouzai
   },
   {
     initialRouteName: "Home"
