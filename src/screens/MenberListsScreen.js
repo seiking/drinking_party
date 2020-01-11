@@ -117,7 +117,14 @@ const styles = StyleSheet.create({
     borderRadius: 13,
     backgroundColor: "#C33B36",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    shadowColor: '#911d18',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowRadius: 0,
+    shadowOpacity: 1,
   },
   bottom_button_text: {
     color: "#FFF",

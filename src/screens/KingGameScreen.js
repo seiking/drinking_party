@@ -2,20 +2,38 @@ import React from "react";
 import { StyleSheet, View, Text, TouchableHighlight } from "react-native";
 
 export default class KingGameScreen extends React.Component {
+  aaa = () => {
+    console.log(current_names_ary)
+  }
+  shuffle = ([...arr]) => {
+    let m = arr.length;
+    while (m) {
+      const i = Math.floor(Math.random() * m--);
+      [arr[m], arr[i]] = [arr[i], arr[m]];
+    }
+    return arr;
+  };
   render() {
-    console.log(this.props.navigation.state.params['current_names'])
+    const current_names = this.props.navigation.state.params['current_names']
+    const current_names_ary = Object.values(current_names)
+    const king_name = current_names_ary[Math.floor(Math.random() * current_names_ary.length)]
+    const citizen_names_ary = this.shuffle(current_names_ary.filter(name => name !== king_name))
     return (
       <View style={styles.container}>
         <View style={styles.title_container}>
           <Text style={styles.title}>王様は</Text>
-          <Text style={styles.title}>●●●</Text>
+          <Text style={styles.king_name}>{king_name}</Text>
           <Text style={[styles.title, styles.margin_bottom]}>です</Text>
-          <Text style={[styles.title, styles.margin_bottom]}>1から●番に命令をしてください</Text>
+          <Text style={[styles.title, styles.margin_bottom]}>1から{citizen_names_ary.length}番に命令をしてください</Text>
         </View>
         <View style={styles.bottom_button}>
           <TouchableHighlight
             style={styles.button}
-            onPress={() => console.log('aaa')}
+            onPress={() =>
+              this.props.navigation.navigate("KingGameResult", {
+                citizen_names_ary: citizen_names_ary,
+              })
+            }
             underlayColor={"#FDF9F7"}
           >
             <Text style={styles.bottom_button_text}>次へ</Text>
@@ -40,25 +58,16 @@ const styles = StyleSheet.create({
     marginBottom: 40
   },
   title: {
-    fontSize: 40,
+    fontSize: 35,
     color: "#DB9B88",
     fontWeight: "bold",
     marginBottom: 10
   },
-  theme_border: {
-    width: 360,
-    height: 100,
-    padding: 5,
-    backgroundColor: '#FFFDFC',
-    borderWidth: 1,
-    borderColor: "#DB9B88",
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  theme_font:{
-    fontSize: 30,
-    fontWeight: '300',
-    color: '#DB9B88'
+  king_name: {
+    fontSize: 55,
+    color: "#DB9B88",
+    fontWeight: "bold",
+    marginBottom: 10
   },
   bottom_button: {
     width: "80%"
@@ -68,7 +77,14 @@ const styles = StyleSheet.create({
     borderRadius: 13,
     backgroundColor: "#C33B36",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    shadowColor: '#911D18',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowRadius: 0,
+    shadowOpacity: 1,
   },
   bottom_button_text: {
     color: "#FFF",

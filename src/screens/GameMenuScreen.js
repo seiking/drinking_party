@@ -122,7 +122,14 @@ const styles = StyleSheet.create({
     height: 140,
     borderRadius: 13,
     marginBottom: 30,
-    alignItems: "center"
+    alignItems: "center",
+    shadowColor: '#911D18',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowRadius: 0,
+    shadowOpacity: 1,
   },
   bottom_button_text: {
     color: "#FFF",

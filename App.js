@@ -8,6 +8,7 @@ import BombScreen2 from "./src/screens/BombScreen2";
 import MenberListsScreen from "./src/screens/MenberListsScreen";
 import RouletteScreen from "./src/screens/RouletteScreen";
 import KingGameScreen from "./src/screens/KingGameScreen";
+import KingGameResultScreen from "./src/screens/KingGameResultScreen";
 import HubyoudouWarikanScreen from "./src/screens/HubyoudouWarikan";
 import Cocontouzai from "./src/screens/Cocontouzai";
 
@@ -20,6 +21,7 @@ const AppNavigator = createStackNavigator(
     MenberLists: MenberListsScreen,
     Roulette: RouletteScreen,
     KingGame: KingGameScreen,
+    KingGameResult: KingGameResultScreen,
     HubyoudouWarikan: HubyoudouWarikanScreen,
     Touzai: Cocontouzai
   },
