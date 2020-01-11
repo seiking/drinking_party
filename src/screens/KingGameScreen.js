@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, TouchableHighlight } from "react-native";
 
 export default class KingGameScreen extends React.Component {
   render() {
+    console.log(this.props.navigation.state.params['current_names'])
     return (
       <View style={styles.container}>
         <View style={styles.title_container}>
