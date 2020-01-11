@@ -77,7 +77,11 @@ export default class RouletteScreen extends React.Component {
         <View style={styles.bottom_button}>
           <TouchableHighlight
             style={styles.button}
-            onPress={() => this.props.navigation.navigate(this.props.navigation.state.params['navigationParameter'])}
+            onPress={() =>
+                this.props.navigation.navigate(this.props.navigation.state.params['navigationParameter'], {
+                  current_names: this.state.current_names,
+                })
+            }
             underlayColor={"#FDF9F7"}
           >
             <Text style={styles.bottom_button_text}>スタート</Text>
