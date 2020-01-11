@@ -24,20 +24,20 @@ export default class GameMenuScreen extends React.Component {
       <View style={styles.container}>
         <View>
           <View style={styles.game_lists}>
-            <TouchableHighlight
-              style={styles.button}
-              onPress={() =>
-                this.props.navigation.navigate("MenberLists", {
-                  title: "ルーレット",
-                  navigationParameter: "Roulette"
-                })
-              }
-              underlayColor={"#FFECE0"}
-              activeOpacity={0.7}
-              underlayColor={"#FDF9F7"}
-            >
-              <Text style={styles.bottom_button_text}>ルーレット</Text>
-            </TouchableHighlight>
+            {/* <TouchableHighlight */}
+            {/*   style={styles.button} */}
+            {/*   onPress={() => */}
+            {/*     this.props.navigation.navigate("MenberLists", { */}
+            {/*       title: "ルーレット", */}
+            {/*       navigationParameter: "Roulette" */}
+            {/*     }) */}
+            {/*   } */}
+            {/*   underlayColor={"#FFECE0"} */}
+            {/*   activeOpacity={0.7} */}
+            {/*   underlayColor={"#FDF9F7"} */}
+            {/* > */}
+            {/*   <Text style={styles.bottom_button_text}>ルーレット</Text> */}
+            {/* </TouchableHighlight> */}
 
             <TouchableHighlight
               style={styles.button}
