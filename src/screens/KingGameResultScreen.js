@@ -6,7 +6,7 @@ export default class KingGameResultScreen extends React.Component {
     citizen_names = this.props.navigation.state.params['citizen_names_ary']
     const list = []
     for(let i in citizen_names){
-      list.push(<Text key={i} style={styles.list_text}>{i}番: {citizen_names[i]}</Text>)
+      list.push(<Text key={i} style={styles.list_text}>{Number(i) + 1}番: {citizen_names[i]}</Text>)
     }
     return (
       <View style={styles.container}>
