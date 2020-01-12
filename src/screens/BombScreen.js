@@ -5,11 +5,12 @@ export default class BombScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 1
+      value: 1,
+      isRandom: false
     };
   }
   onRandom = () => {
-    this.setState({ value: "?" });
+    this.setState({ isRandom: true, value: Math.floor(Math.random() * 15) });
   };
   render() {
     return (
@@ -23,7 +24,7 @@ export default class BombScreen extends React.Component {
                 "https://stockmaterial.net/wp/wp-content/uploads/img/other_bomb01_01.png"
               }}
             />
-            <Text style={[styles.bomb_kakuritu_font, styles.small_font]}>x {this.state.value}</Text>
+            <Text style={[styles.bomb_kakuritu_font, styles.small_font]}>x {this.state.isRandom? '?' : this.state.value}</Text>
             <View>
               <Image
                 style={styles.slush}
@@ -33,7 +34,7 @@ export default class BombScreen extends React.Component {
               <Text style={[styles.bomb_kakuritu_font, styles.midlle_font]}>15</Text>
             </View>
           </View>
-          <Text style={[styles.bomb_kakuritu_font, styles.small_font]}>15分の{this.state.value}</Text>
+          <Text style={[styles.bomb_kakuritu_font, styles.small_font]}>15分の{this.state.isRandom? '?' : this.state.value}</Text>
           <TouchableHighlight
             style={styles.random_button}
             onPress={this.onRandom}
@@ -45,7 +46,10 @@ export default class BombScreen extends React.Component {
         <View style={styles.bottom_button}>
           <TouchableHighlight
             style={styles.button}
-            onPress={() => this.props.navigation.navigate("Bomb2")}
+            onPress={() =>
+                this.props.navigation.navigate("Bomb2", {
+                  fire_size: this.state.value
+                })}
             underlayColor={"#FDF9F7"}
           >
             <Text style={styles.bottom_button_text}>次へ</Text>
